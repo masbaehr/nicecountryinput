@@ -46,12 +46,79 @@
               </div>
 
        
-        
+              <h3>Examples</h3>
 
+    <p>With flags: 
+        <div class="niceCountryInputSelector" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" data-i18nall="All selected"
+            data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+        </div>
+    <pre class="code" data-lang="HTML">
+        <code>
+&lt;div class=&quot;niceCountryInputSelector&quot; style=&quot;width: 300px;&quot; data-selectedcountry=&quot;US&quot; data-showspecial=&quot;false&quot; data-showflags=&quot;true&quot; data-i18nall=&quot;All selected&quot;
+    data-i18nnofilter=&quot;No selection&quot; data-i18nfilter=&quot;Filter&quot; data-onchangecallback=&quot;onChangeCallback&quot; /&gt;
+&lt;/div&gt;
+        </code>
+    </pre>
+    </p>
 
-    <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" data-i18nall="All selected"
-        data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
-    </div>
+    <p>Without flags, showing ISO 
+        <div class="niceCountryInputSelector" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="false" data-i18nall="All selected"
+            data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+        </div>
+        <pre class="code" data-lang="HTML">
+                <code>
+&lt;div class=&quot;niceCountryInputSelector&quot; style=&quot;width: 300px;&quot; data-selectedcountry=&quot;US&quot; data-showspecial=&quot;false&quot; data-showflags=&quot;false&quot; data-i18nall=&quot;All selected&quot;
+    data-i18nnofilter=&quot;No selection&quot; data-i18nfilter=&quot;Filter&quot; data-onchangecallback=&quot;onChangeCallback&quot; /&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+            </p>
+
+    <p>Continent selection
+        <div class="niceCountryInputSelector" style="width: 300px;" data-selectedcountry="_EU" data-showcontinentsonly="true" data-showflags="true" data-i18nall="All selected"
+            data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+        </div>
+        <pre class="code" data-lang="HTML">
+                <code>
+&lt;div class=&quot;niceCountryInputSelector&quot; style=&quot;width: 300px;&quot; data-selectedcountry=&quot;_EU&quot; data-showcontinentsonly=&quot;true&quot; data-showflags=&quot;true&quot; data-i18nall=&quot;All selected&quot;
+    data-i18nnofilter=&quot;No selection&quot; data-i18nfilter=&quot;Filter&quot; data-onchangecallback=&quot;onChangeCallback&quot; /&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+            </p>
+
+    <p>Country selection with "All" and "None" option. e.g. Used when filtering data by country.
+        <div class="niceCountryInputSelector" style="width: 300px;" data-selectedcountry="_AL" data-showcontinentsonly="false" data-showflags="true" data-i18nall="All selected"
+            data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" data-showspecial="true"/>
+        </div>
+        <pre class="code" data-lang="HTML">
+                <code>
+&lt;div class=&quot;niceCountryInputSelector&quot; style=&quot;width: 300px;&quot; data-selectedcountry=&quot;_AL&quot; data-showcontinentsonly=&quot;false&quot; data-showflags=&quot;true&quot; data-i18nall=&quot;All selected&quot;
+    data-i18nnofilter=&quot;No selection&quot; data-i18nfilter=&quot;Filter&quot; data-onchangecallback=&quot;onChangeCallback&quot; data-showspecial=&quot;true&quot;/&gt;
+&lt;/div&gt;                    
+                </code>
+            </pre>
+            </p>
+
+            <h3>Initialisation via JS</h3>
+            <pre class="code" data-lang="JavaScript">
+                    <code>
+//call back function (optional)
+function onChangeCallback(ctr){
+    console.log(&quot;The country was changed: &quot; + ctr);
+    //$(&quot;#selectionSpan&quot;).text(ctr);
+}
+//init picker when document is ready
+$(document).ready(function () {
+    $(&quot;.niceCountryInputSelector&quot;).each(function(i,e){
+        new NiceCountryInput(e).init();
+    });
+});                  
+                    </code>
+                </pre>
+
+                
+
     <script>
         function onChangeCallback(ctr){
             console.log("The country was changed: " + ctr);
@@ -59,7 +126,9 @@
         }
 
         $(document).ready(function () {
-            new NiceCountryInput($("#testinput")).init();
+            $(".niceCountryInputSelector").each(function(i,e){
+                new NiceCountryInput(e).init();
+            });
         });
     </script>
     <!--
