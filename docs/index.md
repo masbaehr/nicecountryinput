@@ -24,19 +24,18 @@ An easy-to-use country picker.
 - Include niceCountryInput.css and niceCountryInput.js
 
 ```html
- <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" data-i18nall="All selected"
-        data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
-    </div>
-      <script>
-        function onChangeCallback(ctr){
-            console.log("The country was changed: " + ctr);
-            //$("#selectionSpan").text(ctr);
-        }
+ <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" 
+   data-i18nall="All selected" data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+ </div>
 
-        $(document).ready(function () {
-            new NiceCountryInput($("#testinput")).init();
-        });
-    </script>
+ <script>
+    function onChangeCallback(ctr){
+        console.log("The country was changed: " + ctr);
+    }
+    $(document).ready(function () {
+        new NiceCountryInput($("#testinput")).init();
+    });
+ </script>
  
 ```
  
