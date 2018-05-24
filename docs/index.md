@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+## Welcome to nicecountryinput
 
-You can use the [editor on GitHub](https://github.com/masbaehr/nicecountryinput/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+An easy-to-use country picker.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Dependencies and requirements
 
-### Markdown
+- Javascript, CSS
+- jQuery 2.x / 3.x
+- HTML data-* Attributes
+- Base64 img source support
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Features
 
-```markdown
-Syntax highlighted code block
+- English and Native country name
+- Selected country is set by ISO code
+- Additional selectors for Continents
+- Additional selectors for All / None
+- Filter input (works with native and english country name)
+- No global namespace pollution, everything is in one prototype "NiceCountryInput"
+- No image files (Every image is saved in the JS file)
 
-# Header 1
-## Header 2
-### Header 3
+### Usage
 
-- Bulleted
-- List
+- Include niceCountryInput.css and niceCountryInput.js
 
-1. Numbered
-2. List
+```html
+ <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" data-i18nall="All selected"
+        data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+    </div>
+      <script>
+        function onChangeCallback(ctr){
+            console.log("The country was changed: " + ctr);
+            //$("#selectionSpan").text(ctr);
+        }
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+        $(document).ready(function () {
+            new NiceCountryInput($("#testinput")).init();
+        });
+    </script>
+ 
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/masbaehr/nicecountryinput/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ 
