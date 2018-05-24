@@ -3,8 +3,10 @@
     color: black !important;
     border: 1px solid #a8a8a8;
     cursor: pointer;
+     /*
     font-family: Arial;
     font-size: 12px;
+    */
 }
 .niceCountryInputMenuDefaultText {
     width: 270px;
@@ -13,11 +15,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.niceCountryInputMenuDefaultText a:hover {
+    text-decoration: none;
+}
 .niceCountryInputMenu a {
     color: black !important;
 }
 .niceCountryInputMenuDropdown {
-    border-left: 1px solid #a8a8a8;
+    /*border-left: 1px solid #a8a8a8;*/
     height: 25px;
     width: 21px;
     float: right;
@@ -42,12 +47,16 @@
     width: 100%;
     color: black !important;
     overflow: hidden;
+    text-decoration: none;
+    /*
     font-family: Arial;
     font-size: 12px;
+    */
 }
 .niceCountryInputMenuDropdownContent a:hover {
     background-color: gray !important;
     color: white !important;
+    text-decoration: none;
 }
 .niceCountryInputMenuFilter {
     border: 1px solid #a8a8a8;

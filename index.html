@@ -4,9 +4,51 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="niceCountryInput.js"></script>
     <link rel="stylesheet" type="text/css" href="niceCountryInput.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 </head>
 
 <body>
+
+        <div class="panel" style="margin: 50px;">
+        <h2>Welcome to nicecountryinput</h2>
+        <p>An easy-to-use country picker.</p>
+
+        <div class="container">
+                <div class="columns">
+                  <div class="column col-xs-12">
+                        
+                        <h3>Dependencies and requirements</h3>
+                        <ul>
+                          <li>Javascript, CSS</li>
+                          <li>jQuery 2.x / 3.x</li>
+                          <li>HTML data-* Attributes</li>
+                          <li>Base64 img source support</li>
+                        </ul>
+
+                  </div>
+                  <div class="column col-xs-12">
+                        <h3>Features</h3>
+                        <ul>
+                          <li>English and Native country name</li>
+                          <li>Selected country is set by ISO code</li>
+                          <li>Additional selectors for Continents</li>
+                          <li>Additional selectors for All / None</li>
+                          <li>Filter input (works with native and english country name)</li>
+                          <li>No global namespace pollution, everything is in one prototype “NiceCountryInput”</li>
+                          <li>No image files (Every image is saved in the JS file)</li>
+                        </ul>
+
+                  </div>
+               
+                </div>
+              </div>
+
+       
+        
+
+
     <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false" data-showflags="true" data-i18nall="All selected"
         data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
     </div>
@@ -26,6 +68,7 @@
         <span id="selectionSpan"></span>
     </div>
     -->
-
+</div>
+ 
 </body>
 </html>
