@@ -1,3 +1,28 @@
 ## Welcome to nicecountryinput
 
-An easy-to-use country picker.
+An easy-to-use country picker. Just 1 JS and 1 CSS file.
+
+[View demo](https://masbaehr.github.io/nicecountryinput/ "Demo")
+
+```html
+
+    <script src="niceCountryInput.js"></script>
+    <link rel="stylesheet" type="text/css" href="niceCountryInput.css">
+
+    <div id="testinput" style="width: 300px;" data-selectedcountry="US" data-showspecial="false"
+        data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" data-i18nfilter="Filter" 
+        data-onchangecallback="onChangeCallback" />
+    </div>
+
+    <script>
+        function onChangeCallback(ctr){
+            console.log("The country was changed: " + ctr);
+            //$("#selectionSpan").text(ctr);
+        }
+
+        $(document).ready(function () {
+            new NiceCountryInput($("#testinput")).init();
+        });
+    </script>
+
+```
