@@ -10,8 +10,9 @@
 function NiceCountryInput(domElement) {
     /*Fixed variables*/
     this.domElement = domElement;
+    this.i18nwait = $(domElement).data("i18nwait") || 'Please wait';
     /*create DOM elements*/
-    $(domElement).append("<div class='niceCountryInputMenu'><span class='niceCountryInputMenuDefaultText'><a><img class='niceCountryInputMenuCountryFlag' src='' /><span>Please wait...</span></a></span><div class='niceCountryInputMenuDropdown'><span style='font-size: 10px;'>▼</span></div></div>");
+    $(domElement).append("<div class='niceCountryInputMenu'><span class='niceCountryInputMenuDefaultText'><a><img class='niceCountryInputMenuCountryFlag' src='' /><span>"+this.i18nwait+"…</span></a></span><div class='niceCountryInputMenuDropdown'><span style='font-size: 10px;'>▼</span></div></div>");
     $(domElement).append("<div class='niceCountryInputMenuFilter' style='display: none;'><input placeholder='"+$(domElement).data("i18nfilter")+"…'/></div>");
     $(domElement).append("<div class='niceCountryInputMenuDropdownContent' style='display: none;' />");
     $(domElement).append("<input class='niceCountryInputMenuInputHidden' type='hidden'/>");
