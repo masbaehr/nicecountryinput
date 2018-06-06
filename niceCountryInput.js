@@ -1,5 +1,5 @@
 /**
- *  Version 1.0.2
+ *  Version 1.0.3
     Copyright 2018 https://github.com/masbaehr
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
     to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -10,11 +10,17 @@
 function NiceCountryInput(domElement) {
     /*Fixed variables*/
     this.domElement = domElement;
+    /* check if already initialized before doing any work */
+    if ($(this.domElement).data("initialized")) {
+        this.log("Already initialized...");
+        return;
+    }
+    /* i18n */
     this.i18nwait = this.escapeHTML($(domElement).data("i18nwait") || 'Please wait');
     this.i18nfilter = this.escapeHTML($(domElement).data("i18nfilter") || 'Filter');
     this.i18nall = this.escapeHTML($(domElement).data("i18nall") || 'All');
     this.i18nnofilter = this.escapeHTML($(domElement).data("i18nnofilter") || "None");
-    /*create DOM elements*/
+    /*create DOM elements only when not already initialized */
     $(domElement).append("<div class='niceCountryInputMenu'><span class='niceCountryInputMenuDefaultText'><a><img class='niceCountryInputMenuCountryFlag' src='' /><span>"+this.i18nwait+"…</span></a></span><div class='niceCountryInputMenuDropdown'><span style='font-size: 10px;'>▼</span></div></div>");
     $(domElement).append("<div class='niceCountryInputMenuFilter' style='display: none;'><input placeholder='"+this.i18nfilter+"…'/></div>");
     $(domElement).append("<div class='niceCountryInputMenuDropdownContent' style='display: none;' />");
