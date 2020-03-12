@@ -36,6 +36,7 @@ function NiceCountryInput(domElement) {
     this.showSpecialCountries = $(domElement).data("showspecial");
     this.showContinents = $(domElement).data("showContinents");
     this.showContinentsOnly = $(domElement).data("showcontinentsonly");
+    //exemplary usage: data-onlycountries="de,it,fr"
     this.onlyCountries = $(domElement).data("onlycountries") ? $(domElement).data("onlycountries").toLowerCase().split(",") : undefined;
     this.showFlags = $(domElement).data("showflags");
     this.onChangeCallback = $(domElement).data("onchangecallback");
