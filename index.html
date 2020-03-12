@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
     <script src="niceCountryInput.js"></script>
     <link rel="stylesheet" type="text/css" href="niceCountryInput.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
@@ -106,14 +106,12 @@
 //call back function (optional)
 function onChangeCallback(ctr){
     console.log(&quot;The country was changed: &quot; + ctr);
-    //$(&quot;#selectionSpan&quot;).text(ctr);
 }
-//init picker when document is ready
-$(document).ready(function () {
-    $(&quot;.niceCountryInputSelector&quot;).each(function(i,e){
-        new NiceCountryInput(e).init();
-    });
-});                  
+//init picker when document is ready  
+document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) { 
+    document.querySelectorAll(&quot;.niceCountryInputSelector&quot;).forEach(element => new NiceCountryInput(element).init());
+});
+
                     </code>
                 </pre>
 
@@ -125,11 +123,11 @@ $(document).ready(function () {
             //$("#selectionSpan").text(ctr);
         }
 
-        $(document).ready(function () {
-            $(".niceCountryInputSelector").each(function(i,e){
-                new NiceCountryInput(e).init();
-            });
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            document.querySelectorAll(".niceCountryInputSelector").forEach(element => new NiceCountryInput(element).init());
         });
+
+       
     </script>
     <!--
     <div>
