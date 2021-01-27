@@ -34,7 +34,7 @@ function NiceCountryInput(domElement) {
     /*Data attributes (dynamic)*/
     this.selectedCountry = domElement.dataset.selectedcountry;
     this.showSpecialCountries = domElement.dataset.showspecial === 'true';
-    this.showContinents = domElement.dataset.showContinents === 'true';
+    this.showContinents = domElement.dataset.showcontinents === 'true';
     this.showContinentsOnly = domElement.dataset.showcontinentsonly === 'true';
     //exemplary usage: data-onlycountries="de,it,fr"
     this.onlyCountries = domElement.dataset.onlycountries ? domElement.dataset.onlycountries.toLowerCase().split(",") : undefined;
